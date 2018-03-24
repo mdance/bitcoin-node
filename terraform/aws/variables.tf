@@ -15,7 +15,7 @@ variable "cidr" {
 # SSH key pair to use.  This needs to be in AWS.
 variable "keypair" {
   type    = "string"
-  default = "dev"
+  default = "bitcoin"
 }
  
 # Instance type to use 
@@ -27,7 +27,19 @@ variable "type" {
 # AWS region
 variable "region" {
   type    = "string"
-  default = "us-east-1"
+  default = "ca-central-1"
+}
+
+# AWS access_key
+variable "aws_access_key" {
+  type    = "string"
+  default = ""
+}
+
+# AWS secret_key
+variable "aws_secret_key" {
+  type    = "string"
+  default = ""
 }
 
 # if you need to define tenancy

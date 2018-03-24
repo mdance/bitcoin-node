@@ -5,10 +5,14 @@ After=docker.service
 [Service]
 ExecStartPre=-/usr/bin/docker pull {{ bitcoind_docker_image }}
 ExecStartPre=-/usr/bin/docker rm bitcoind
-ExecStart=/usr/bin/docker run \
-  --net host \
+ExecStart=/usr/bin/docker \
+	run \
+  --env-file /root/.env \
+  --volume {{ volume_path }}/bitcoind/data:/bitcoin \
+  -p 8332:8332 \
+  -p 8333:8333 \
   --name bitcoind \
-  -v {{ volume_path }}/bitcoind/data:/bitcoin \
+  --net host \
   {{ bitcoind_docker_image }}
 ExecStop=-/usr/bin/docker stop bitcoind
 

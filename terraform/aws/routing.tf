@@ -24,8 +24,8 @@ resource "aws_route_table_association" "node-b" {
 }
 
 # node-c association
-resource "aws_route_table_association" "node-c" {
-  subnet_id      = "${ aws_subnet.node-c.id }"
-  route_table_id = "${ aws_route_table.public.id }"
-}
+#resource "aws_route_table_association" "node-c" {
+#  subnet_id      = "${ aws_subnet.node-c.id }"
+#  route_table_id = "${ aws_route_table.public.id }"
+#}
 

@@ -1,12 +1,11 @@
 #!/bin/bash
-
-ANSIBLE_HOSTS=/etc/ansible/hosts
-
 apt-get update
 apt-get -y install python-pip
 pip install ansible
 
 mkdir -p /etc/ansible
+
+ANSIBLE_HOSTS=/etc/ansible/hosts
 
 if [ ! -e $ANSIBLE_HOSTS ]; then
   cat >${ANSIBLE_HOSTS} <<EOF

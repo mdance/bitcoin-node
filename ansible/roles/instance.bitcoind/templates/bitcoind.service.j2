@@ -7,7 +7,7 @@ ExecStartPre=-/usr/bin/docker pull {{ bitcoind_docker_image }}
 ExecStartPre=-/usr/bin/docker rm bitcoind
 ExecStart=/usr/bin/docker \
 	run \
-  --env-file /root/.env \
+  --env-file /opt/env \
   --volume {{ volume_path }}/bitcoind/data:/bitcoin \
   -p 8332:8332 \
   -p 8333:8333 \

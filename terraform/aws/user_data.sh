@@ -13,7 +13,7 @@ localhost
 EOF
 fi
 
-ENV_FILE=$HOME/.env
+ENV_FILE=/opt/env
 
 if [ ! -e $ENV_FILE ]; then
 	PASSWORD=`openssl rand -hex 32`

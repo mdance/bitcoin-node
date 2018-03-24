@@ -29,17 +29,17 @@ resource "aws_subnet" "node-b" {
 }
 
 # node subnet c
-resource "aws_subnet" "node-c" {
-  vpc_id            ="${ aws_vpc.main.id }"
-  cidr_block        = "${ var.cidr }.6.0/24"
-  availability_zone = "${ var.region }c"
-
-  tags {
-    terraform_id = "${ var.env }-terraform"
-    Name         = "${ var.env }-node-subnet-c"
-    Environment  = "${ var.env }"
-    Role         = "node"
-    Zone         = "public"
-  }
-}
+#resource "aws_subnet" "node-c" {
+#  vpc_id            ="${ aws_vpc.main.id }"
+#  cidr_block        = "${ var.cidr }.6.0/24"
+#  availability_zone = "${ var.region }c"
+#
+#  tags {
+#    terraform_id = "${ var.env }-terraform"
+#    Name         = "${ var.env }-node-subnet-c"
+#    Environment  = "${ var.env }"
+#    Role         = "node"
+#    Zone         = "public"
+#  }
+#}
 
